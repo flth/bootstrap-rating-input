@@ -7,15 +7,15 @@
     // A private function to highlight a star corresponding to a given value
     function _paintValue(ratingInput, value) {
       var selectedStar = $(ratingInput).find('i[data-value=' + value + ']');
-      selectedStar.removeClass('icon-star-empty').addClass('icon-star');
-      selectedStar.prevAll('i').removeClass('icon-star-empty').addClass('icon-star');
-      selectedStar.nextAll('i').removeClass('icon-star').addClass('icon-star-empty');
+      selectedStar.removeClass('fa-star-o').addClass('fa-star');
+      selectedStar.prevAll('i').removeClass('fa-star-o').addClass('fa-star');
+      selectedStar.nextAll('i').removeClass('fa-star').addClass('fa-star-o');
     }
 
     // A private function to remove the selected rating
     function _clearValue(ratingInput) {
       var self = $(ratingInput);
-      self.find('i').removeClass('icon-star').addClass('icon-star-empty');
+      self.find('i').removeClass('fa-star').addClass('fa-star-o');
       self.find('.rating-clear').hide();
       self.find('input').val('').trigger('change');
     }
@@ -27,18 +27,18 @@
         originalInput = $(this[element]),
         max = originalInput.data('max') || 5,
         min = originalInput.data('min') || 0,
-        clearable = originalInput.data('clearable') || null,
+        clearable = originalInput.data('clearable') || null,
         stars = '';
 
       // HTML element construction
       for (i = min; i <= max; i++) {
         // Create <max> empty stars
-        stars += ['<i class="icon-star-empty" data-value="', i, '"></i>'].join('');
+        stars += ['<i class="fa fa-star-empty" data-value="', i, '"></i>'].join('');
       }
       // Add a clear link if clearable option is set
       if (clearable) {
         stars += [
-          ' <a class="rating-clear" style="display:none;" href="javascript:void"><i class="icon-remove"></i> ',
+          ' <a class="rating-clear" style="display:none;" href="javascript:void"><i class="fa-times"></i> ',
           clearable,
           '</a>'].join('');
       }
