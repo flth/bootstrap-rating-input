@@ -66,7 +66,7 @@ You can easily generate such code with your favourite template engine and a loop
 
     / Given a variable val with the value you want to represent and a variable max that contains the maximum number of stars:
     - max.times do |i|
-      %i{class: "icon-star#{'-o' if i>val}"}
+      %i{class: "fa fa-star#{'-o' if i>val}"}
 
 Well, HAML is awesome, but you are a programmer, so you'll be able to addapt this to your favorite language...
 
