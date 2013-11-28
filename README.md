@@ -60,13 +60,13 @@ You know... [Twitter Bootstrap](http://twitter.github.io/bootstrap) and [jQuery]
 
 If you think about it you don't want to use a plugin to generate static HTML code that is as simple as this:
 
-    <i class='icon-star'></i><i class='icon-star'></i><i class='icon-star'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>
+    <i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i>
 
 You can easily generate such code with your favourite template engine and a loop. With Ruby and HAML it could look like this:
 
     / Given a variable val with the value you want to represent and a variable max that contains the maximum number of stars:
     - max.times do |i|
-      %i{class: "icon-star#{'-empty' if i>val}"}
+      %i{class: "icon-star#{'-o' if i>val}"}
 
 Well, HAML is awesome, but you are a programmer, so you'll be able to addapt this to your favorite language...
 
